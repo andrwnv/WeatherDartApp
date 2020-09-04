@@ -4,15 +4,15 @@ import 'dart:io';
 
 import 'package:http/http.dart' as http;
 
+import 'package:weather_app/network/api_keys.dart';
 import 'package:weather_app/models/day_data.dart';
 import 'package:weather_app/models/day_part.dart';
-import 'package:weather_app/network/api_keys.dart';
 
 
 class YandexWeatherApi {
   String _baseUrl = 'https://api.weather.yandex.ru/v2/';
 
-  List<String> timeOfDay = [ 'night', 'morning', 'day', 'evening', 'day_short', 'night_short' ];
+  List<String> _timeOfDay = [ 'night', 'morning', 'day', 'evening', 'day_short', 'night_short' ];
 
   void _checkStatusCode(int statusCode) {
     if (statusCode > 400 || statusCode < 200 || json == null)
@@ -26,7 +26,7 @@ class YandexWeatherApi {
     return json.decode(response.body);
   }
 
-  List<DayData> parseResponse(Map<String, dynamic> response) {
+  List<DayData> _parseResponse(Map<String, dynamic> response) {
     var dayForecasts = Map.from(response)['forecasts'] as Iterable;
 
     List<DayData> forecasts = [];
@@ -34,7 +34,7 @@ class YandexWeatherApi {
     for (var forecast in dayForecasts) {
       List<DayPart> dayParts = [];
 
-      for (var part in timeOfDay) {
+      for (var part in _timeOfDay) {
         var _part = forecast['parts'][part];
         dayParts.add(DayPart(
             part,
@@ -59,7 +59,7 @@ class YandexWeatherApi {
 
     print(response);
 
-    return parseResponse(response as Map<String, dynamic>);
+    return _parseResponse(response as Map<String, dynamic>);
   }
 }
 

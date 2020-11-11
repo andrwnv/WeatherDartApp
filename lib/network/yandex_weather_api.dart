@@ -63,10 +63,10 @@ class YandexWeatherApi {
   }
 }
 
-void main() async {
-  YandexWeatherApi api = new YandexWeatherApi();
+// void main() async {
+//   YandexWeatherApi api = new YandexWeatherApi();
 
-  for (var item in await api.getForecasts(56.593795, 84.895908)) {
-    print(item);
-  }
-}
+//   for (var item in await api.getForecasts(56.593795, 84.895908)) {
+//     print(item);
+//   }
+// }

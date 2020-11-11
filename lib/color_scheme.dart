@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 
-class ColorScheme {
+class AppColorScheme {
   // Gradients.
   static final LinearGradient backgroudGradient = new LinearGradient(
     begin: Alignment.topCenter,

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'views/weater_widget.dart';
+import 'views/weather_scroll_widget.dart';
+import 'color_scheme.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,59 +11,39 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+      home: Scaffold(
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: AppColorScheme.backgroudGradient
+          ),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 80.0),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 20.0, bottom: 30),
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      'Сегодня', 
+                      style: TextStyle(
+                        fontSize: 36, 
+                        color: AppColorScheme.mainFontColor
+                      ),
+                    ),
+                  ),
+                ),
+                WeatherWidget(title: 'Flutter Demo Home Page'),
+                Padding(
+                  padding: const EdgeInsets.only(top: 36.0),
+                  child: WeatherScrollWidget(title: "aaa",),
+                )
+              ],
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+          ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
+        backgroundColor: Colors.transparent,
+      )
     );
   }
 }

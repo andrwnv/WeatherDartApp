@@ -30,65 +30,84 @@ class _WeatherWidget extends State<WeatherWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container (
-      decoration: BoxDecoration(
-        gradient: AppColorScheme.weatherWidgetBackground
-      ),
-      child: Column(
-        children: <Widget>[
-          Expanded(
-            flex: 6, // 60%
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  flex: 5, // 50%
-                  child: Text(
-                    '$_currentLocality, $_currentCountry',
-                    style: TextStyle(
-                      color: AppColorScheme.mainFontColor,
-                      fontSize: 20
-                    ),
-                  ),
-                ),
-                Expanded(
-                  flex: 5, // 50%
-                  child: Column(
-                    children: <Widget>[
-                      Text(
-                        '$_currentTemp' + ' \u2109',
+    return  Center(
+      child: Container (
+        constraints: BoxConstraints.expand(
+          height: 150.0,
+          width: 350.0
+        ),
+        decoration: BoxDecoration(
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+              color: Colors.black.withOpacity(.25),
+              blurRadius: 13.0,
+              spreadRadius: 2.0,
+            ),
+          ],
+          gradient: AppColorScheme.weatherWidgetBackground,
+          borderRadius: new BorderRadius.all(Radius.circular(25))
+        ),
+        child: Row(
+          children: <Widget>[
+            Expanded(
+              flex: 5, // 60%
+              child: Column(
+                children: <Widget>[
+                  Expanded(
+                    flex: 5, // 50%
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 30.0),
+                      child: Text(
+                        '$_currentLocality, $_currentCountry',
                         style: TextStyle(
-                          color: AppColorScheme.mainFontColor, 
-                          fontSize: 48
+                          color: AppColorScheme.mainFontColor,
+                          fontSize: 20
                         ),
                       ),
-                      Text(
-                        '$_currentWeather'
-                      )
-                    ],
+                    ),
                   ),
-                )
-              ],
-            )
-          ),
-          Expanded(
-            flex: 4, // 40%
-            child: Container(
-              decoration: BoxDecoration(
-                boxShadow: <BoxShadow>[
-                  BoxShadow(
-                    color: Colors.white.withOpacity(.2),
-                    blurRadius: 5.0,
-                    spreadRadius: 2.0,
-                  ),
-                ]
-              ),
-              child: Icon(
-                Icons.wb_sunny,
-                size: 81,
-              ),
-            )
-          ),
-        ],
+                  Expanded(
+                    flex: 5, // 50%
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 30.0, bottom: 30.0),
+                      child: Row(
+                        children: <Widget>[
+                          Text(
+                            '$_currentTemp' + '\u00B0',
+                            style: TextStyle(
+                              color: AppColorScheme.mainFontColor, 
+                              fontSize: 48
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8.0, top: 20),
+                            child: Text(
+                              '$_currentWeather',
+                              style: TextStyle(
+                                color: AppColorScheme.mainFontColor, 
+                                fontSize: 20
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              )
+            ),
+            Expanded(
+              flex: 4, // 40%
+              child: Container(
+                child: Icon(
+                  Icons.wb_sunny,
+                  size: 81,
+                  color: Color(0xFFFFF4F4),
+                ),
+              )
+            ),
+          ],
+        ),
       ),
     );
   }

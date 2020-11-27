@@ -41,4 +41,7 @@ flutter:
     - family: Roboto-Regular
       fonts:
         - asset: assets/fonts/Roboto-Regular.ttf
+
+  assets:
+    - assets/icons/settings.png
         

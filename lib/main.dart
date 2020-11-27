@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'views/weater_widget.dart';
 import 'views/weather_scroll_widget.dart';
+import 'views/tool_bar.dart';
 import 'color_scheme.dart';
 
 void main() {
@@ -17,9 +18,13 @@ class MyApp extends StatelessWidget {
             gradient: AppColorScheme.backgroudGradient
           ),
           child: Padding(
-            padding: const EdgeInsets.only(top: 80.0),
+            padding: const EdgeInsets.only(top: 40.0),
             child: Column(
               children: [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 30.0),
+                  child: ToolBarWidget(title: 'asss'),
+                ),
                 Padding(
                   padding: const EdgeInsets.only(left: 20.0, bottom: 30),
                   child: Align(

@@ -48,8 +48,10 @@ class _WeatherScrollWidget extends State<WeatherScrollWidget> {
                 child: Text(
                   '$time', 
                   style: TextStyle(
-                    color: AppColorScheme.mainFontColor, 
-                    fontSize: 16)
+                      color: AppColorScheme.mainFontColor, 
+                      fontSize: 16,
+                      fontFamily: 'Roboto-Medium'
+                    )
                   ),
               )),
               Expanded(flex: 5, child: Padding(
@@ -65,8 +67,9 @@ class _WeatherScrollWidget extends State<WeatherScrollWidget> {
                 child: Text(
                   '$deg' + '\u00B0', 
                   style: TextStyle(
-                    color: AppColorScheme.mainFontColor, 
-                    fontSize: 16
+                      color: AppColorScheme.mainFontColor, 
+                      fontSize: 16,
+                      fontFamily: 'Roboto-Medium'
                     )
                   ),
               )),
@@ -93,20 +96,21 @@ class _WeatherScrollWidget extends State<WeatherScrollWidget> {
           child: Column(
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.only(top: 12.0, bottom: 7.0, left: 8),
+                padding: const EdgeInsets.only(top: 12.0, bottom: 7.0, left: 10),
                 child: Align(
                   alignment: Alignment.centerLeft, 
                   child: Text(
                     '$name',
                     style: TextStyle(
                       color: AppColorScheme.alternativeMainColor,
-                      fontSize: 13
+                      fontSize: 13,
+                      fontFamily: 'Roboto-Medium'
                     ),
                   )
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 8),
+                padding: const EdgeInsets.only(left: 10),
                 child: Align(
                   alignment: Alignment.centerLeft, 
                   child: Text(
@@ -114,6 +118,7 @@ class _WeatherScrollWidget extends State<WeatherScrollWidget> {
                     style: TextStyle(
                       color: AppColorScheme.alternativeMainColor,
                       fontSize: 20,
+                      fontFamily: 'Roboto-Medium'
                     )
                   )
                 ),
@@ -173,7 +178,7 @@ class _WeatherScrollWidget extends State<WeatherScrollWidget> {
             Expanded(
               flex: 1, 
               child: Padding(
-                padding: const EdgeInsets.only(left: 20.0),
+                padding: const EdgeInsets.only(left: 20.0, top: 10),
                 child: Align(
                   alignment: Alignment.topLeft,
                   child: Text(
@@ -182,6 +187,7 @@ class _WeatherScrollWidget extends State<WeatherScrollWidget> {
                     style: TextStyle(
                       color: AppColorScheme.mainFontColor,
                       fontSize: 18,
+                      fontFamily: 'Roboto-Bold'
                     ),
                   ),
                 ),

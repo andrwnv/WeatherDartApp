@@ -28,7 +28,8 @@ class MyApp extends StatelessWidget {
                       'Сегодня', 
                       style: TextStyle(
                         fontSize: 36, 
-                        color: AppColorScheme.mainFontColor
+                        color: AppColorScheme.mainFontColor,
+                        fontFamily: 'Roboto-Medium'
                       ),
                     ),
                   ),

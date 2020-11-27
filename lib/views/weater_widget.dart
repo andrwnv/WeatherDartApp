@@ -61,7 +61,8 @@ class _WeatherWidget extends State<WeatherWidget> {
                         '$_currentLocality, $_currentCountry',
                         style: TextStyle(
                           color: AppColorScheme.mainFontColor,
-                          fontSize: 20
+                          fontSize: 22,
+                          fontFamily: 'Roboto-Medium'
                         ),
                       ),
                     ),
@@ -76,7 +77,8 @@ class _WeatherWidget extends State<WeatherWidget> {
                             '$_currentTemp' + '\u00B0',
                             style: TextStyle(
                               color: AppColorScheme.mainFontColor, 
-                              fontSize: 48
+                              fontSize: 48,
+                              fontFamily: 'Roboto-Medium'
                             ),
                           ),
                           Padding(
@@ -85,7 +87,8 @@ class _WeatherWidget extends State<WeatherWidget> {
                               '$_currentWeather',
                               style: TextStyle(
                                 color: AppColorScheme.mainFontColor, 
-                                fontSize: 20
+                                fontSize: 20,
+                                fontFamily: 'Roboto-Regular'
                               ),
                             ),
                           )

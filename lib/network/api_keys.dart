@@ -1,5 +1,3 @@
-class ApiKeys {
-  static final yandexHeader = {
-    'X-Yandex-API-Key': 'cc38ee37-4252-45db-9bc2-b9f14425ca51'
-  };
+class ApiKey {
+  static String OPEN_WEATHER_MAP = "4eacc1be089e633431104c6417f3c47d";
 }
